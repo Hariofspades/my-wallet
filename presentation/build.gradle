@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    def globalConfig = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfig["compileSdkVersion"]
+    buildToolsVersion globalConfig["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfig["minSdkVersion"]
+        targetSdkVersion globalConfig["targetSdkVersion"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
+
+    implementation project(':domain')
+
+    implementation presentationDependencies.rxKotlin
+    implementation presentationDependencies.kotlin
+    implementation presentationDependencies.archRuntime
+    implementation presentationDependencies.archExtension
+    kapt presentationDependencies.archCompiler
+
+    testImplementation presentationTestDependencies.jUnit
+    testImplementation presentationTestDependencies.mockito
+    testImplementation presentationTestDependencies.archCore
+
+}

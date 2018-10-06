@@ -1,0 +1,133 @@
+ext {
+
+    // framework
+    buildToolsVersion = '28.0.2'
+    compileSdkVersion = 28
+    minSdkVersion = 16
+    targetSdkVersion = 28
+    kotlinVersion = '1.2.71'
+
+    //image
+    glideVersion = '4.8.0'
+
+    // rx
+    rxKotlinVersion = '2.2.0'
+    rxAndroidVersion = '2.0.2'
+
+    // design
+    appCompat = '28.0.0'
+    motionLayout = '2.0.0-alpha2'
+    counterVersion = '1.0.2'
+    skeletonVersion = '1.1.1'
+    shimmerVersion = '2.1.0'
+    supportVersion = '28.0.0'
+
+    //di
+    kodein = '5.3.0'
+
+    // log
+    timberVersion = '4.7.1'
+
+    // network
+    retrofitVersion = '2.4.0'
+    gsonVersion = '2.8.5'
+    gsonVersion1 = '2.8.0'
+    okHttpVersion = '3.11.0'
+
+    // test
+    testRunnerVersion = '1.0.2'
+    espressoVersion = '3.0.2'
+    jUnitVersion = '4.12'
+    mockitoVersion = '2.0.0-RC1'
+    robolectricVersion = '3.8'
+    mockitoAndroidVersion = '2.6.1'
+
+    // arch
+    archCoreTest = '1.1.1'
+    archRuntimeVersion = '1.1.1'
+    archExtensionVersion = '1.1.1'
+    archCompilerVersion = '1.1.1'
+    archViewModelVersion = '1.1.1'
+
+    appDependencies = [
+            kodeinJvm: "org.kodein.di:kodein-di-generic-jvm:${kodein}",
+            kodeinCore: "org.kodein.di:kodein-di-framework-android-core:${kodein}",
+            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            glide: "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler: "com.github.bumptech.glide:compiler:${glideVersion}",
+            appCompat: "com.android.support:appcompat-v7:${appCompat}",
+            constraintLayout: "com.android.support.constraint:constraint-layout:${motionLayout}",
+            recyclerView: "com.android.support:recyclerview-v7:${appCompat}",
+            timber: "com.jakewharton.timber:timber:${timberVersion}",
+            archRuntime: "android.arch.core:runtime:${archRuntimeVersion}",
+            archExtension: "android.arch.lifecycle:extensions:${archExtensionVersion}",
+            archCompiler: "android.arch.lifecycle:compiler:${archCompilerVersion}",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            counter: "ru.bullyboo.animation:text_counter:${counterVersion}",
+            skeleton: "com.ethanhua:skeleton:${skeletonVersion}",
+            shimmer: "io.supercharge:shimmerlayout:${shimmerVersion}",
+            supportDesign: "com.android.support:design:${supportVersion}"
+    ]
+
+    appTestDependencies = [
+            archCore: "android.arch.core:core-testing:${archCoreTest}",
+            jUnit: "junit:junit:${jUnitVersion}",
+            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoVersion}",
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            testRunner: "com.android.support.test:runner:${testRunnerVersion}",
+            espressoCore: "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+    ]
+
+    presentationDependencies = [
+            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            archRuntime: "android.arch.core:runtime:${archRuntimeVersion}",
+            archExtension: "android.arch.lifecycle:extensions:${archExtensionVersion}",
+            archCompiler: "android.arch.lifecycle:compiler:${archCompilerVersion}"
+    ]
+
+    presentationTestDependencies = [
+            archCore: "android.arch.core:core-testing:${archCoreTest}",
+            jUnit: "junit:junit:${jUnitVersion}",
+            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoVersion}",
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+    ]
+
+    domainDependencies = [
+            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+    ]
+
+    domainTestDependencies = [
+            jUnit: "junit:junit:${jUnitVersion}",
+            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoVersion}"
+    ]
+
+    dataDependencies = [
+            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+    ]
+
+    dataTestDependencies = [
+            jUnit: "junit:junit:${jUnitVersion}",
+            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoVersion}",
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+    ]
+
+    remoteDependencies = [
+            retrofit: "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitAdapter: "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            retrofitConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            gson: "com.google.code.gson:gson:${gsonVersion}",
+            okHttp: "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttpLogger: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+    ]
+
+    remoteTestDependencies = [
+            jUnit: "junit:junit:${jUnitVersion}",
+            mockito: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoVersion}"
+    ]
+}

@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    def globalConfig = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfig["compileSdkVersion"]
+    buildToolsVersion globalConfig["buildToolsVersion"]
+
+    defaultConfig {
+        applicationId "com.hariofspades.blockchain"
+        minSdkVersion globalConfig["minSdkVersion"]
+        targetSdkVersion globalConfig["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            multiDexEnabled true
+        }
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+
+    def appDependencies = rootProject.ext.appDependencies
+    def appTestDependencies = rootProject.ext.appTestDependencies
+
+    implementation project(':presentation')
+    implementation project(':domain')
+    implementation project(':remote')
+
+
+    implementation appDependencies.supportDesign
+
+    kapt appDependencies.archCompiler
+    implementation appDependencies.archRuntime
+    implementation appDependencies.archExtension
+
+    implementation appDependencies.kodeinCore
+    implementation appDependencies.kodeinJvm
+
+    implementation appDependencies.rxKotlin
+    implementation appDependencies.kotlin
+
+    implementation appDependencies.rxAndroid
+
+    implementation appDependencies.timber
+
+    implementation appDependencies.appCompat
+    implementation appDependencies.recyclerView
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.counter
+    implementation appDependencies.skeleton
+    implementation appDependencies.shimmer
+
+    implementation appTestDependencies.archCore
+    implementation appTestDependencies.jUnit
+    implementation appTestDependencies.mockito
+    implementation appTestDependencies.kotlinJUnit
+    implementation appTestDependencies.testRunner
+    implementation appTestDependencies.espressoCore
+
+}

@@ -1,0 +1,24 @@
+apply plugin: 'kotlin'
+
+dependencies {
+
+    def remoteDependencies = rootProject.ext.remoteDependencies
+    def remoteTestDependencies = rootProject.ext.remoteTestDependencies
+
+    compile project(':domain')
+
+    implementation remoteDependencies.retrofit
+    implementation remoteDependencies.retrofitAdapter
+    implementation remoteDependencies.retrofitConverter
+    implementation remoteDependencies.gson
+    implementation remoteDependencies.okHttp
+    implementation remoteDependencies.okHttpLogger
+    implementation remoteDependencies.rxKotlin
+    implementation remoteDependencies.kotlin
+
+    testImplementation remoteTestDependencies.jUnit
+    testImplementation remoteTestDependencies.mockito
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
