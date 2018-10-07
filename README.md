@@ -43,8 +43,3 @@ and few more design oriented libraries
 * Skeleton loading
 * Green and orange colors to represent credit and debit
 * Inspired by the app Rally, a Material 2.0 case study app
-
-## My thoughts
-* I have tweaked the mapping and layers of clean-architecture to fit this use-case. No data and cache layer
-* I felt for a finance app, dark theme would be more appropriate to make the numbser stand out
-* I did not show some of the data, like 'output' on the list. That data would be more suitable for a detail view which I thought it's out of scope
